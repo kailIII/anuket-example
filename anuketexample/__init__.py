@@ -29,7 +29,7 @@ def main(global_config, **settings):
     config.include(anuket.subscribers)
 
     # configure static views
-    config.add_static_view('anuket:static', 'anuket:static', cache_max_age=3600)
+    config.add_static_view('static', 'anuket:static', cache_max_age=3600)
 
     # configure routes
     config.include(anuket.views.root)
