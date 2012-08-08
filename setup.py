@@ -8,9 +8,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
 requires = [
-    'pyramid',
-    'pyramid_debugtoolbar',
-    'waitress',
+    'anuket',
     ]
 
 setup(name='anuket-example',
