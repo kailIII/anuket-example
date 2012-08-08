@@ -1,0 +1,10 @@
+*.db
+*.egg-info
+*.pyc
+build/
+var/
+dist/
+.directory
+.tox
+/.coverage
+/.noseids
