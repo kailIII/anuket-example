@@ -1,11 +1,12 @@
-import anuket
-
 from pyramid.config import Configurator
 from pyramid_beaker import session_factory_from_settings
 
 from sqlalchemy import engine_from_config
 
-from anuket.models import DBSession, RootFactory
+import anuket
+from anuket.models import DBSession
+from anuket.models.rootfactory import RootFactory
+from anuket.security import get_auth_user
 
 
 def main(global_config, **settings):
@@ -25,7 +26,7 @@ def main(global_config, **settings):
     # configure auth & auth
     config.include(anuket.add_authorization)
     # set an auth_user object
-    config.set_request_property(anuket.get_auth_user, 'auth_user', reify=True)
+    config.set_request_property(get_auth_user, 'auth_user', reify=True)
     # configure subscribers
     config.include(anuket.subscribers)
     # configure static views
