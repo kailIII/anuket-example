@@ -35,8 +35,11 @@ def main(global_config, **settings):
     config.include(anuket.views.root)
     config.include(anuket.views.tools)
     config.include(anuket.views.user)
+    from anuketexample import views
+    config.include(views)
     # configure views
     config.scan('anuket')
+    config.scan()
 
     config.add_translation_dirs('anuket:locale')
     config.set_locale_negotiator('anuket.lib.i18n.locale_negotiator')
