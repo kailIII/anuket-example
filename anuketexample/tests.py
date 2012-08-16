@@ -1,8 +1,6 @@
 import os
-import sys
 import unittest
 
-from paste.deploy.loadwsgi import appconfig
 from pyramid import testing
 
 
